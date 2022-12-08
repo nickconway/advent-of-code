@@ -1,5 +1,5 @@
-input = open("input").read()
-example = open("example").read()
+input = open("input.txt").read()
+example = open("example.txt").read()
 
 def part_one(input):
     seen = []

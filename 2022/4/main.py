@@ -1,9 +1,9 @@
-input = open("input").read().split('\n')[:-1]
-example = open("example").read().split('\n')[:-1]
+input = open("input.txt").read().strip()
+example = open("example.txt").read().strip()
 
-def part_one(lines):
+def part_one(file):
     result = 0
-    for line in lines:
+    for line in file.split('\n'):
         selections = line.split(",")
         for i, sel in enumerate(selections):
             selections[i] = sel.split("-")
@@ -13,9 +13,9 @@ def part_one(lines):
             result += 1
     print(result)
 
-def part_two(lines):
+def part_two(file):
     result = 0
-    for line in lines:
+    for line in file.split('\n'):
         selections = line.split(",")
         for i, sel in enumerate(selections):
             selections[i] = sel.split("-")

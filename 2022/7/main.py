@@ -1,7 +1,7 @@
 from collections import defaultdict
 
-example = open("example").read().strip()
-input = open("input").read().strip()
+example = open("example.txt").read().strip()
+input = open("input.txt").read().strip()
 
 def part_one(file):
     sizes = defaultdict(int)
