@@ -1,13 +1,13 @@
 from collections import defaultdict
 
-example = open("example.txt").read().strip()
-input = open("input.txt").read().strip()
+example = open("example.txt").read()
+input = open("input.txt").read()
 
 def part_one(file):
     sizes = defaultdict(int)
     paths = []
 
-    for line in file.split('\n'):
+    for line in file.strip().split('\n'):
         tokens = line.split()
         if tokens[0] == "$" and tokens[1] == "cd":
             if tokens[2] == "..":
@@ -28,7 +28,7 @@ def part_one(file):
 def part_two(file):
     sizes = defaultdict(int)
     paths = []
-    for line in file.split('\n'):
+    for line in file.strip().split('\n'):
         tokens = line.split()
         if tokens[0] == "$" and tokens[1] == "cd":
             if tokens[2] == "..":
