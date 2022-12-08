@@ -69,7 +69,7 @@ def part_two(file):
     return result
 
 part_one(example)
-part_two(example)
-
 part_one(input)
+print()
+part_two(example)
 part_two(input)

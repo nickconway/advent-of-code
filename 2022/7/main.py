@@ -47,10 +47,10 @@ def part_two(file):
     update_space = 30_000_000
     free = 70_000_000 - sizes["/"]
     needed = update_space - free
-    print(min([size for size in sizes.values() if size > needed]))
+    print(min(size for size in sizes.values() if size > needed))
 
 part_one(example)
-part_two(example)
-
 part_one(input)
+print()
+part_two(example)
 part_two(input)

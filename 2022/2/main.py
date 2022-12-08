@@ -1,10 +1,10 @@
-example = open("example.txt").read().strip()
-input = open("input.txt").read().strip()
+example = open("example.txt").read()
+input = open("input.txt").read()
 
 def part_one(file):
     scores = {"X": 1, "Y": 2, "Z": 3}
     score = 0
-    for line in file.split('\n'):
+    for line in file.strip().split('\n'):
         if line[0] == "A" and line[2] == "X" or \
                 line[0] == "B" and line[2] == "Y" or \
                 line[0] == "C" and line[2] == "Z":
@@ -23,7 +23,7 @@ def part_two(file):
     scores = {"A": 1, "B": 2, "C": 3}
     outcomes = {"A": ["A", "B", "C"], "B": ["B", "C", "A"], "C": ["C", "A", "B"]}
     score = 0
-    for line in file.split('\n'):
+    for line in file.strip().split('\n'):
         if line[2] == "X":
             score += 0 + scores[outcomes[line[0]][2]]
         if line[2] == "Y":
@@ -33,7 +33,7 @@ def part_two(file):
     print(score)
 
 part_one(example)
-part_two(example)
-
 part_one(input)
+print()
+part_two(example)
 part_two(input)

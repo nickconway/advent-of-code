@@ -1,9 +1,9 @@
-example = open("example.txt")
-input = open("input.txt")
+example = open("example.txt").read()
+input = open("input.txt").read()
 
-def run(file):
+def part_one(file):
     result = 0
-    for line in file:
+    for line in file.strip().split('\n'):
         half1 = set(line[:len(line) // 2])
         half2 = set(line[len(line) // 2:])
         intersection = list(half1.intersection(half2))[0]
@@ -16,13 +16,10 @@ def run(file):
     print(result)
     return result
 
-run(example)
-run(input)
-
-def run2(file):
+def part_two(file):
     result = 0
     group = []
-    for line in file:
+    for line in file.strip().split('\n'):
         group.append(line.strip())
         if len(group) == 3:
             s1 = set(group[0])
@@ -39,7 +36,8 @@ def run2(file):
     print(result)
     return result
 
-example.seek(0)
-input.seek(0)
-run2(example)
-run2(input)
+part_one(example)
+part_one(input)
+print()
+part_two(example)
+part_two(input)
